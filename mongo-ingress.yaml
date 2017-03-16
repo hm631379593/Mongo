@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: mongo-ingress
+#  namespace: spark-cluster
+spec:
+  rules:
+  - host: test1.cloud.sinocbd.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: mongo
+          servicePort: 27017
